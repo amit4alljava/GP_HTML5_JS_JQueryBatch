@@ -1,0 +1,7 @@
+.completedTask{
+    text-decoration: line-through;
+    color:red;
+}
+li{
+    cursor: pointer;
+}

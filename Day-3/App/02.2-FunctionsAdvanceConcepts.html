@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>
+
+</p>
+<script>
+    // Closure
+    function makeAdder(x) {
+        return function(y) {
+            return x + y;
+        };
+    }
+
+    var add5 = makeAdder(5);
+    var add10 = makeAdder(10);
+
+    console.log(add5(2));  // 7
+    console.log(add10(2)); // 12
+
+
+
+</script>
+//Memoization
+<script>
+    var cache={};
+    function getPrime(num){
+        var isPrime = true;
+        if(cache[num]){
+        //if(typeof(cache[num])!=="undefined"){
+            console.log("Coming from the Cache.... It is Prime No "+cache[num]);
+            isPrime = true;
+            return isPrime;
+        }
+        else
+        {
+            if(num<=3){
+                isPrime = true;
+                cache[num]=num;
+                console.log("Processed....");
+                return isPrime;
+            }
+            else
+            {
+                for(var i = 2; i<=num-1; i++){
+                    if(num% i ===0){
+                        isPrime= false;
+
+                        console.log("Processed....");
+                        break;
+
+                    }
+                }
+                if(isPrime===true){
+                    cache[num]=num;
+                    console.log("Prime Number "+num);
+
+                }
+                else
+                {
+
+                    console.log("Not a Prime Number "+num);
+                }
+            }
+            return isPrime;
+        }
+
+    }
+
+
+</script>
+//Immediate Invoke Function (IIF)
+<script>
+    (function loanProcess(){
+        console.log("Loan Process Called...");
+    })();
+    // Use of IIF
+    var object = (function loanProcess2(name,amount){
+
+        function applyForLoan(){
+            console.log("Apply For Loan Called.. By ",name);
+        }
+        function calculateScoring(){
+            console.log("Calculate Scoring on Loan "+name+" and Amount is "+amount);
+        }
+        return {"applyForLoan":applyForLoan,"cal":calculateScoring};
+
+    })('Mike',9000);
+
+</script>
+</body>
+</html>

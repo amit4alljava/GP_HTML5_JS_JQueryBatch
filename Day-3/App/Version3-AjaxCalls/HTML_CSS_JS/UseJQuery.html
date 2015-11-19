@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#bt").click(function(){
+            var txtValue = $("#txtName").val();
+            $("div p span").html(txtValue);
+        });
+        });
+    </script>
+</head>
+<body>
+<input type="text" id="txtName"/>
+<button id="bt">Say Hello</button>
+<div>
+    <p>Welcome<span></span></p>
+</div>
+</body>
+</html>

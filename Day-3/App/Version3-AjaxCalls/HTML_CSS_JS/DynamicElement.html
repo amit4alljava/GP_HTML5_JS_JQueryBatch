@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        window.addEventListener("load",function(){
+            var counter = 0;
+            document.getElementById("add").addEventListener("click",function(){
+                var ul = document.getElementById("taskManagerList");
+                var li = document.createElement("li");
+                counter++;
+                li.innerHTML="Task "+counter;
+                li.addEventListener("click",function(event){
+                    console.log("Selected Index is ",this.selectedIndex);
+                    var currentli = event.srcElement.innerHTML;
+                   var currentliObject = event.srcElement;
+                   var ul = currentliObject.parentNode;
+                   for(var i = 0 ; i<ul.childNodes.length; i++){
+                       var currentChild = ul.childNodes.item(i);
+                       if(currentChild===li){
+                           ul.removeChild(currentChild);
+                         break;
+                       }
+                   }
+                    console.log("Index is ",i);
+                    /*var selectedIndex = event.srcElement.selectedIndex;
+                     console.log("Selected Index is ",selectedIndex+" Current Li is "+currentli);*/
+                });
+
+                ul.appendChild(li);
+
+            });
+            // Search Code Start
+            document.getElementById("searchTxt").addEventListener("keyup",function(){
+                    var ul = document.getElementById("taskManagerList");
+                    var txtValue = document.getElementById("searchTxt").value;
+                for(var i = 0; i<ul.childNodes.length; i++){
+                        var currentLiNode = ul.childNodes.item(i);
+                        if(currentLiNode.innerHTML.indexOf(txtValue)){
+                            while(ul.hasChildNodes()){
+                                ul.removeChild("li");
+                            }
+
+                        }
+                    }
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" name="" id="searchTxt"/>
+<button id="add">Add</button>
+<button id="search">Search</button>
+<ul id="taskManagerList">
+
+</ul>
+</body>
+</html>
