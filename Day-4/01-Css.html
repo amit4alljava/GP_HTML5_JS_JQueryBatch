@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CSS Apply-Powered by TKHTS.COM</title>
+</head>
+<style>
+.mystyle{
+font-family: sans-serif;
+font-size: 20px;
+font-style: italic;
+font-weight: bold;
+text-align: center;
+text-shadow: blue;
+}
+</style>
+<body>
+<p>Hello This is Text</p>
+<button id="b1">Apply Style</button>
+<button id="b2">Add Class</button>
+<button id="b3">Remove Class</button>
+<script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$("#b1").click(function(){
+	$("p").css({"background-color":"yellow","font-size":"200%"});
+});
+$("#b2").click(function(){
+	$("p").addClass("mystyle");
+});
+$("#b3").click(function(){
+	$("p").removeClass("mystyle");
+});
+</script>
+<!--  Create Table and apply even / odd selector and apply css  -->
+</body>
+</html>

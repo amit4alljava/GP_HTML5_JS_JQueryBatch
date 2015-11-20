@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Show-Hide Paragraph - Powered by TKHTS.COM</title>
+</head>
+<body>
+<div id="myDiv">
+</div>
+<input type="button" value="Hide" id="b1"/>
+<a href="#" id="a1"><b><i>Hide</i></b></a>
+<p id="p1">Show Hide Text Demo</p>
+<script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$("#b1").click(function() {
+
+	var value = $("#b1").attr("value");
+	if(value.toLowerCase()=='hide'){
+		$("#b1").attr("value","Show");
+		$("#a1").html("Show");
+		//$("p").hide();	
+	}
+	else
+	if(value.toLowerCase()=='show'){
+		$("#b1").attr("value","Hide");
+		$("#a1").html("Hide");
+		//$("p").show();	
+	}
+	$("p").toggle('slow');
+		
+	
+});
+$("#a1").click(function() {
+	$("#myDiv").html($("#a1").html());
+	alert("HTML "+$("#a1").html());
+	alert("TEXT "+$("#a1").text());
+	/* var value = $("#a1").html();
+	if(value.toLowerCase()=='hide'){
+		$("#a1").html("Show");
+			
+	}
+	else
+	if(value.toLowerCase()=='show'){
+		$("#a1").html("Hide");
+			
+	}
+	$("p").toggle('slow');
+	 */	
+	
+});
+</script>
+</body>
+</html>
