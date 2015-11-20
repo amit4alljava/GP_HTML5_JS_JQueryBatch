@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>TaskManager App</legend>
+        <table>
+            <tr>
+                <td><label for="taskName">TaskName</label></td>
+                <td><input type="text" placeholder="Type Task Name Here"  id="taskName"/></td>
+            </tr>
+            <tr>
+                <td><label for="taskDesc">TaskDesc</label></td>
+                <td><input type="text" placeholder="Type Task Desc Here"  id="taskDesc"/></td>
+            </tr>
+            <tr>
+                <td><button id="add">Add</button></td>
+                <td><button id="save">Save</button></td>
+                <td><button id="delete">Delete Completed</button></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Task List</legend>
+        <ul id="taskList"></ul>
+    </fieldset>
+</div>
+<div id="divMessage"></div>
+</body>
+</html>
